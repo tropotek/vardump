@@ -28,7 +28,9 @@ $ composer install
 
 ### Tailing the log
 
-Use your browser to view the [index.php](index.php). It will log to a file called `debug.log`.
+Use your browser to view the [index.php](index.php). It will create a file called 
+`debug.log` and log to it. If you have errors, you may need to manually create it and 
+change its permissions.
 
 Then you can run the command:
 ~~~bash
