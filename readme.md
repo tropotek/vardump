@@ -60,7 +60,7 @@ implemented 2 global functions `vd()` and `vdd()`.
 **vdd():** Same as `vd()` but with a full stack trace so you can see how the code got there.
 
 
-See the index.php for a full usage example.
+See the [index.php](index.php) for a full usage example.
 
 
 
