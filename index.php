@@ -32,7 +32,6 @@ $logger->emergency('This is an Emergency Message');
 $logger->error('This is an Error Message');
 
 
-
 // Custom var dump functions vd(), vdd() should show nothing on fully released sites.
 // Var dump Examples
 vd('testing');
