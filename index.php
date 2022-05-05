@@ -1,5 +1,4 @@
 <?php
-
 use Monolog\Formatter\NormalizerFormatter;
 use Monolog\Handler\StreamHandler;
 use Monolog\Logger;
@@ -46,12 +45,6 @@ $std->var2 = 2;
 vd($std);
 // With stack trace
 vdd($std);
-
-
-
-
-
-
 
 ?>
 <html>
