@@ -16,7 +16,7 @@ logging tools to speed up your dev process.
 ## Installation
 
 Just clone the repository locally then run the composer to setup.
-Then browse to the index.php pn your system.
+Then browse to the [index.php](index.php) file on your system.
 
 ~~~bash
 $ git clone https://github.com/tropotek/vardump.git
