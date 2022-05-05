@@ -1,0 +1,24 @@
+{
+  "name": "ttek/logtest",
+  "type": "project",
+  "description": "basic logtest example",
+  "keywords": [ "tropotek" ],
+  "time": "2022-05-05",
+  "license": "MIT",
+  "minimum-stability": "dev",
+  "authors": [
+    {
+      "name": "Michael Mifsud",
+      "homepage": "http://www.tropotek.com/"
+    }
+  ],
+  "autoload":  {
+    "psr-0":  {
+      "": "src/"
+    }
+  },
+  "require": {
+    "php": "^7.1|^8.0",
+    "monolog/monolog": "^1.0"
+  }
+}
