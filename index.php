@@ -1,6 +1,7 @@
 <?php
 use Monolog\Formatter\NormalizerFormatter;
 use Monolog\Handler\StreamHandler;
+use Monolog\Handler\BrowserConsoleHandler;
 use Monolog\Logger;
 
 $sitePath = dirname(__FILE__);
@@ -18,12 +19,19 @@ $LOG_LEVEL = Logger::DEBUG;     // vd(),vdd() are sent with this log level
 $logPath = __DIR__ . '/debug.log';
 //$logger = new \Psr\Log\NullLogger();
 $logger = new Logger('debug');
-$handler = new StreamHandler($logPath, $LOG_LEVEL);
-$logger->pushHandler($handler);
+
 $formatter = new \App\Debug\DebugLogFormatter();
-// Enable ASCII text colors
-$formatter->setColorsEnabled(true);   //Do not enable if you are going to use grep commands to search the log file
+$formatter->setColorsEnabled(true); 
+
+$handler = new StreamHandler($logPath, $LOG_LEVEL);
 $handler->setFormatter($formatter);
+$logger->pushHandler($handler);
+
+$formatter = new \App\Debug\DebugLogFormatter();
+$handler = new BrowserConsoleHandler($logPath, $LOG_LEVEL);
+$handler->setFormatter($formatter);
+$logger->pushHandler($handler);
+
 \App\Debug\VarDump::getInstance($logger, $sitePath);
 // --------------------------------
 
