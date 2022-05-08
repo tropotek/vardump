@@ -16,6 +16,7 @@ $LOG_LEVEL = Logger::DEBUG;     // vd(),vdd() are sent with this log level
 
 // ------------- init -------------
 $logPath = __DIR__ . '/debug.log';
+//$logger = new \Psr\Log\NullLogger();
 $logger = new Logger('debug');
 $handler = new StreamHandler($logPath, $LOG_LEVEL);
 $logger->pushHandler($handler);
