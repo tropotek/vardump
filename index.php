@@ -1,5 +1,5 @@
 <?php
-use Monolog\Formatter\NormalizerFormatter;
+
 use Monolog\Handler\StreamHandler;
 use Monolog\Handler\BrowserConsoleHandler;
 use Monolog\Logger;
@@ -28,7 +28,7 @@ $handler->setFormatter($formatter);
 $logger->pushHandler($handler);
 
 $formatter = new \App\Debug\DebugLogFormatter();
-$handler = new BrowserConsoleHandler($logPath, $LOG_LEVEL);
+$handler = new BrowserConsoleHandler($LOG_LEVEL);
 $handler->setFormatter($formatter);
 $logger->pushHandler($handler);
 

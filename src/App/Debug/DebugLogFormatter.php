@@ -35,7 +35,7 @@ class DebugLogFormatter extends LineFormatter
     /**
      * {@inheritdoc}
      */
-    public function format(array $record)
+    public function format(array $record) :string
     {
         $colors = array(
             'emergency'     => 'brown',
