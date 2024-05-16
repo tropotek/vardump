@@ -35,6 +35,8 @@ $logger->pushHandler($handler);
 \App\Debug\VarDump::getInstance($logger, $sitePath);
 // --------------------------------
 
+//file_put_contents($logPath, "\n\n\n\n", FILE_APPEND);
+
 // Logging examples
 $logger->debug('This is a Debug Message');
 $logger->emergency('This is an Emergency Message');

@@ -180,7 +180,7 @@ namespace App\Debug {
                     $str = sprintf("%s \n%s(\n%s\n%s)", $type, substr($pad, 0, -2), implode('', $a), substr($pad, 0, -2));
                 }
             } else if (is_object($var)) {
-                $type = '{' . get_class($var) . '} Object';
+                $type = '{' . str_replace("\0", '', get_class($var)) . '} Object';
                 if ($nest >= $depth) {
                     $str = $type;
                 } else {
