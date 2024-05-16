@@ -133,8 +133,9 @@ namespace App\Debug {
             $arr = array();
             foreach ($args as $a) {
                 $type = gettype($a);
-                if ($type == 'object')
-                    $type = get_class($a);
+                if ($type == 'object') {
+                    $type = str_replace("\0", '', get_class($a));
+                }
                 $arr[] = $type;
             }
             return $arr;
