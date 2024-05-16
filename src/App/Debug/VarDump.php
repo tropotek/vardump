@@ -124,6 +124,7 @@ namespace App\Debug {
             } else if (is_string($var)) {
                 $type = 'String';
                 $str = str_replace("\0", '|', $var);
+                $str = "'{$str}'";
             } else if (is_resource($var)) {
                 $type = 'Resource';
                 $str = get_resource_type($var);
