@@ -180,13 +180,14 @@ namespace App\Debug {
                     $str = sprintf("%s \n%s(\n%s\n%s)", $type, substr($pad, 0, -2), implode('', $a), substr($pad, 0, -2));
                 }
             } else if (is_object($var)) {
-                $type = '{' . str_replace("\0", '', get_class($var)) . '} Object';
+                $class = str_replace("\0", '', get_class($var));
+                $type = '{' . $class . '} Object';
                 if ($nest >= $depth) {
                     $str = $type;
                 } else {
                     $a = array();
                     foreach ((array)$var as $k => $v) {
-                        $k = str_replace(get_class($var), '*', $k);
+                        $k = str_replace($class, '*', $k);
                         $a[] = sprintf("%s[%s] => %s", $pad, $k, self::varToString($v, $depth, $nest + 1));
                     }
                     $str = sprintf("%s \n%s{\n%s\n%s}", $type, substr($pad, 0, -2), implode("\n", $a), substr($pad, 0, -2));
@@ -194,8 +195,6 @@ namespace App\Debug {
             }
             return $str;
         }
-
-
     }
 }
 
