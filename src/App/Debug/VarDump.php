@@ -161,7 +161,7 @@ namespace App\Debug {
                 $str = 'NULL';
             } else if (is_bool($var)) {
                 $type = 'Boolean';
-                $str = $var == true ? 'true' : 'false';
+                $str = $var ? 'true' : 'false';
             } else if (is_string($var)) {
                 $type = 'String';
                 $str = str_replace("\0", '|', $var);
